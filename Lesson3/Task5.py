@@ -15,6 +15,6 @@ for i in range(1, k):
     arrPositiveSeq.append(arrPositiveSeq[i] + arrPositiveSeq[i - 1])
 
 for i in range(1, k + 1):
-    arrNegativeSeq.append((-1) ** i * arrPositiveSeq[-i])
+    arrNegativeSeq.append((-1)**i * arrPositiveSeq[-i])
 
 print(f"Result = {arrNegativeSeq + arrPositiveSeq}")

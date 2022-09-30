@@ -6,4 +6,11 @@
 
 arr = [2, 3, 5, 9, 3]
 
-print(f"Result = {sum([val for key, val in enumerate(arr) if key%2])}") # k%2 == 0 для четных индексов => False
+# print(f"Result = {sum([val for key, val in enumerate(arr) if key%2])}")
+
+res = 0
+
+for i in range(len(arr)):
+    if i%2 != 0: res += arr[i]
+
+print(f"Result = {res}")
