@@ -12,8 +12,7 @@ def excludeDuplicateElements(list):
     return res
 
 try:
-    n = int(input("Enter length: "))
-    arr = getList(n)
+    arr = getList(int(input("Enter length: ")))
     res = excludeDuplicateElements(arr)
     print(f"sourse = {arr}")  
     print(f"result = {res}")

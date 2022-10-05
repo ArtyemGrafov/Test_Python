@@ -27,15 +27,17 @@ def getPolynomial(coeff, e):
 
 try:
     k = int(input("Enter degree: "))
+    if k < 1:
+        print("Enter INT > 0")
+    else:
+        coefficients = [random.randint(1, 100)]
+        coefficients.extend([random.randint(0, 100) for i in range(k)])
 
-    coefficients = [random.randint(1, 100)]
-    coefficients.extend([random.randint(0, 100) for i in range(k)])
+        strPolin = getPolynomial(coefficients, k)
 
-    strPolin = getPolynomial(coefficients, k)
-
-    with open("output_Task3_Lesson4", "w", encoding="utf-16") as file:
-        #file.write(f'Coeff : {str(coefficients)}\n')
-        file.write("result : " + strPolin)
-    print("Done")
+        with open("output_Task3_Lesson4", "w", encoding="utf-16") as file:
+            file.write(f'Coeff : {str(coefficients)}\n')
+            file.write("result : " + strPolin)
+        print("Done")
 except Exception:
     print("Error")

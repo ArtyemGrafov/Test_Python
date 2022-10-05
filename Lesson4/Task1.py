@@ -1,22 +1,26 @@
 # Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
-def isPrime(x):
-    if x == 1: return False
-    else:
-        count = 2
-        for i in range(2, x):
-            if x%i == 0: count += 1
-    return count == 2
+from tokenize import Double
 
-def getDivisors(a):
-    res = []                         # [i for i in range(2, n+1) if n%i == 0 and isPrime(i)]
-    for i in range(2, a + 1):
-        if a%i == 0 and isPrime(i):
-            res.append(i)
-    return res
 
+def getMinMultiplier(n):
+    multiplier = 2
+    while multiplier <= n:
+        if n%multiplier == 0: 
+            return multiplier
+        else:
+            multiplier += 1
+
+def getSimpleMultipliers(n):
+    listN = []
+    while n > 1:        
+        multiplier = getMinMultiplier(n)
+        listN.append(multiplier)
+        n = n // multiplier
+    return listN
+
+# num = 83006 # 2 * 7 * 7 * 7 * 11 * 11
 try:
-    n = int(input("Enter n: "))
-    print(f"result = {getDivisors(n)}")
+    print(getSimpleMultipliers(int(input("Enter n: "))))
 except Exception:
     print("Enter INT")

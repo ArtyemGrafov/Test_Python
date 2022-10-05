@@ -3,12 +3,12 @@
 import random
 
 def getMinMultiplier(n):
-    i = 2
-    while i <= n:
-        if n%i == 0: 
-            return i
+    multiplier = 2
+    while multiplier <= n:
+        if n%multiplier == 0: 
+            return multiplier
         else:
-            i += 1
+            multiplier += 1
 
 def getSimpleMultipliers(n):
     listN = []
