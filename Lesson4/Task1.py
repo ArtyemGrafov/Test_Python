@@ -1,8 +1,5 @@
 # Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 
-from tokenize import Double
-
-
 def getMinMultiplier(n):
     multiplier = 2
     while multiplier <= n:
